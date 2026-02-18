@@ -48,7 +48,7 @@ export default function App() {
           <hr />
           <div className='h-full overflow-y-auto'>
             {
-              results.map((result, index) => {
+              results ? results.map((result, index) => {
                 return (
                   <div key={index} className='border rounded-lg p-4 my-4'>
                     <h2 className='text-xl font-bold'>{result.title}</h2>
@@ -56,7 +56,7 @@ export default function App() {
                   </div>
 
                 )
-              })
+              }) : <p>No results yet. Please upload an image and submit your interests.</p>
             }
           </div>
         </div>
