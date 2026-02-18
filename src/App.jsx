@@ -1,11 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 export default function App() {
 
 
 
 
-  const [results, setResults] = React.useState();
+  const [results, setResults] = useState([]);
 
 
   const handleSubmit = async (e) => {
