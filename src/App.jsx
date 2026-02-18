@@ -35,18 +35,27 @@ export default function App() {
       <form onSubmit={handleSubmit} className='h-4/5 w-full p-10 flex'>
         {/* Input Picture */}
 
-        {
-          preview ? <img src={preview} alt="Preview" className="w-1/2 h-full rounded-2xl " /> : <label className="w-1/2 h-full border text-xl border-white bg-zinc-900 hover:bg-zinc-800 rounded-2xl p-4 text-white cursor-pointer flex items-center justify-center">
-            Choose Image
-            <input
-              name='uploadedImage'
-              type="file"
-              accept="image/*"
-              className="hidden"
-              onChange={handleImageChange}
+        <label className="w-1/2 h-full border text-xl border-white bg-zinc-900 hover:bg-zinc-800 rounded-2xl p-4 text-white cursor-pointer flex items-center justify-center relative overflow-hidden">
+
+          {preview ? (
+            <img
+              src={preview}
+              alt="Preview"
+              className="absolute inset-0 w-full h-full object-cover rounded-2xl"
             />
-          </label>
-        }
+          ) : (
+            "Choose Image"
+          )}
+
+          <input
+            name="uploadedImage"
+            type="file"
+            accept="image/*"
+            className="hidden"
+            onChange={handleImageChange}
+          />
+        </label>
+
         <div className='w-1/2 h-full'>
           {/* Interest Section */}
           <div className='w-full h-1/3 flex flex-col gap-4 ps-4'>
