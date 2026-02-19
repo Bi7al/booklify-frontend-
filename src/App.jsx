@@ -32,10 +32,10 @@ export default function App() {
   return (
     <section className='h-screen w-full'>
       <nav className='p-8 bg-orange-950'><h1 className='text-white font-extrabold text-4xl'>Booklify</h1></nav>
-      <form onSubmit={handleSubmit} className='h-4/5 w-full p-10 flex'>
+      <form onSubmit={handleSubmit} className='h-full md:h-4/5 w-full p-2 md:p-10 flex flex-col md:flex-row gap-10 md:gap-0'>
         {/* Input Picture */}
 
-        <label className="w-1/2 h-full border text-xl border-white bg-zinc-900 hover:bg-zinc-800 rounded-2xl p-4 text-white cursor-pointer flex items-center justify-center relative overflow-hidden">
+        <label className="w-full md:w-1/2 h-2/3 md:h-full border text-xl border-white bg-zinc-900 hover:bg-zinc-800 rounded-2xl p-4 text-white cursor-pointer flex items-center justify-center relative overflow-hidden">
 
           {preview ? (
             <img
@@ -53,13 +53,14 @@ export default function App() {
             accept="image/*"
             className="hidden"
             onChange={handleImageChange}
+            required
           />
         </label>
 
-        <div className='w-1/2 h-full'>
+        <div className='w-full md:w-1/2 h-full'>
           {/* Interest Section */}
-          <div className='w-full h-1/3 flex flex-col gap-4 ps-4'>
-            <textarea name="interests" id="" placeholder='Enter interests seperated by Comma.' className='border rounded-2xl p-4 h-full' />
+          <div className='w-full h-1/3 flex flex-col gap-4 md:ps-4'>
+            <textarea required name="interests" id="" placeholder='Enter interests seperated by Comma.' className='border rounded-2xl p-4 h-full' />
             <button className='w-fit px-6 py-2 bg-orange-900 text-white font-bold rounded-lg hover:bg-blue-500 cursor-pointer'>Submit</button>
           </div>
           <div className='ps-4 pt-4 h-1/2'>
